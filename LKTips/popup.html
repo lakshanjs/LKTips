@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LKTips Dictionary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            width: 300px;
+        }
+        h2 {
+            margin: 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;    
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+        #suggestions {
+            max-height: 200px; /* Adjust as necessary */
+            overflow-y: auto;
+        }
+        ul#suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        ul#suggestions li {
+            padding: 8px;
+            cursor: pointer;
+        }
+        ul#suggestions li:hover,
+        ul#suggestions li.highlighted {
+            background-color: #f0f0f0;
+        }
+        ul#suggestions:empty {
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        #result:empty {
+            display: none;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .title {
+            margin-left: 10px;
+        }
+        .icon img {
+            width: 32px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="icon">
+            <img src="icons/icon48.png" >
+        </div>
+        <div class="title">
+            <h2>LKTips Dictionary</h2>
+            <small>English to Sinhala</small>
+        </div>
+    </div>
+    <input type="text" id="wordInput" placeholder="Type an English word...">
+    <ul id="suggestions"></ul>
+    <button id="lookupButton">Lookup</button>
+    <div id="result"></div>
+    <script src="popup.js"></script>
+</body>
+</html>

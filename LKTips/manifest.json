@@ -1,13 +1,17 @@
 {
     "manifest_version": 3,
     "name": "LKTips",
-    "version": "1.0",
-    "description": "Shows Sinhala meanings of English words on hover.",
-    "permissions": ["storage", "activeTab", "scripting"],
+    "version": "5.1",
+    "description": "Instantly view Sinhala meaning  of English words by hovering over them or searching directly",
+    "permissions": ["storage"],
+    "host_permissions": ["<all_urls>"],
     "icons": {
         "16": "icons/icon16.png",
         "48": "icons/icon48.png",
         "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
     },
     "options_page": "options.html",
     "content_scripts": [
@@ -21,5 +25,8 @@
             "resources": ["dictionary.json"],
             "matches": ["<all_urls>"]
         }
-    ]
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    }
 }
